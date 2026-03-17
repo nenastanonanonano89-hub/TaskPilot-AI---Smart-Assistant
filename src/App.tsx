@@ -533,21 +533,21 @@ Use Markdown formatting to arrange the report beautifully and elegantly.`
         {/* Sidebar */}
         <motion.aside 
           initial={false}
-          animate={{ width: isSidebarOpen ? 320 : 0, opacity: isSidebarOpen ? 1 : 0 }}
+          animate={{ width: isSidebarOpen ? 360 : 0, opacity: isSidebarOpen ? 1 : 0 }}
           className={`bg-[#FAFAFA] dark:bg-gray-900 text-[#111827]/80 dark:text-gray-300 ${langConfig.dir === 'rtl' ? 'border-l' : 'border-r'} border-gray-200 dark:border-gray-800 flex flex-col shrink-0 overflow-hidden z-20 absolute md:relative h-full shadow-2xl md:shadow-none`}
         >
           {/* Profile Section in Sidebar (Top) */}
-          <div className="p-4 border-b border-gray-200 dark:border-gray-800">
+          <div className="p-6 border-b border-gray-200 dark:border-gray-800">
             <button 
               onClick={() => setCurrentView('profile')}
-              className={`w-full flex items-center gap-3 p-2 rounded-xl transition-all ${currentView === 'profile' ? 'bg-orange-50 dark:bg-gray-800 ring-1 ring-orange-200 dark:ring-gray-700' : 'hover:bg-gray-100 dark:hover:bg-gray-800'}`}
+              className={`w-full flex items-center gap-4 p-3 rounded-2xl transition-all ${currentView === 'profile' ? 'bg-orange-50 dark:bg-gray-800 ring-1 ring-orange-200 dark:ring-gray-700' : 'hover:bg-gray-100 dark:hover:bg-gray-800'}`}
             >
-              <div className="w-10 h-10 rounded-full bg-orange-100 dark:bg-gray-700 flex items-center justify-center text-[#F97316] shrink-0">
-                <User className="w-5 h-5" />
+              <div className="w-12 h-12 rounded-full bg-orange-100 dark:bg-gray-700 flex items-center justify-center text-[#F97316] shrink-0">
+                <User className="w-6 h-6" />
               </div>
               <div className={`flex-1 overflow-hidden ${langConfig.dir === 'rtl' ? 'text-right' : 'text-left'}`}>
-                <p className="text-sm font-bold text-[#111827] dark:text-white truncate">{user.name}</p>
-                <p className="text-xs text-gray-500 dark:text-gray-400 truncate">{user.email}</p>
+                <p className="text-base font-bold text-[#111827] dark:text-white truncate">{user.name}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 truncate">{user.email}</p>
               </div>
             </button>
           </div>
@@ -656,16 +656,16 @@ Use Markdown formatting to arrange the report beautifully and elegantly.`
 
               <button 
                 onClick={() => setIsDarkMode(!isDarkMode)}
-                className="w-full flex items-center justify-between p-2.5 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm"
+                className="w-full flex items-center justify-between p-3.5 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm"
               >
-                <div className="flex items-center gap-3">
-                  {isDarkMode ? <Moon className="w-5 h-5 text-[#F97316]" /> : <Sun className="w-5 h-5 text-[#F97316]" />}
-                  <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                <div className="flex items-center gap-4">
+                  {isDarkMode ? <Moon className="w-6 h-6 text-[#F97316]" /> : <Sun className="w-6 h-6 text-[#F97316]" />}
+                  <span className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     {isDarkMode ? t.darkMode || 'Dark Mode' : t.lightMode || 'Light Mode'}
                   </span>
                 </div>
-                <div className={`w-10 h-5 rounded-full p-0.5 transition-colors ${isDarkMode ? 'bg-[#F97316]' : 'bg-gray-300 dark:bg-gray-600'}`}>
-                  <div className={`w-4 h-4 rounded-full bg-white transform transition-transform ${isDarkMode ? (langConfig.dir === 'rtl' ? '-translate-x-5' : 'translate-x-5') : 'translate-x-0'}`} />
+                <div className={`w-12 h-6 rounded-full p-1 transition-colors ${isDarkMode ? 'bg-[#F97316]' : 'bg-gray-300 dark:bg-gray-600'}`}>
+                  <div className={`w-4 h-4 rounded-full bg-white transform transition-transform ${isDarkMode ? (langConfig.dir === 'rtl' ? '-translate-x-6' : 'translate-x-6') : 'translate-x-0'}`} />
                 </div>
               </button>
 
@@ -685,18 +685,18 @@ Use Markdown formatting to arrange the report beautifully and elegantly.`
                     showToast(t.copied, t.linkCopied);
                   }
                 }}
-                className="w-full flex items-center gap-3 p-2.5 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm"
+                className="w-full flex items-center gap-4 p-3.5 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm"
               >
-                <Share2 className="w-5 h-5 text-[#F97316]" />
-                <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">{t.share}</span>
+                <Share2 className="w-6 h-6 text-[#F97316]" />
+                <span className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">{t.share}</span>
               </button>
 
               <button 
                 onClick={() => setCurrentView('preferences')}
-                className="w-full flex items-center gap-3 p-2.5 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm"
+                className="w-full flex items-center gap-4 p-3.5 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm"
               >
-                <Settings className="w-5 h-5 text-[#F97316]" />
-                <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">{t.preferences || 'Preferences'}</span>
+                <Settings className="w-6 h-6 text-[#F97316]" />
+                <span className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">{t.preferences || 'Preferences'}</span>
               </button>
 
               <button 
@@ -705,10 +705,10 @@ Use Markdown formatting to arrange the report beautifully and elegantly.`
                     clearAllTasks();
                   }
                 }}
-                className="w-full flex items-center gap-3 p-2.5 rounded-xl border border-transparent text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all"
+                className="w-full flex items-center gap-4 p-3.5 rounded-xl border border-transparent text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all"
               >
-                <Trash2 className="w-5 h-5" />
-                <span className="text-xs font-bold uppercase tracking-wider">{t.clearAll}</span>
+                <Trash2 className="w-6 h-6" />
+                <span className="text-sm font-bold uppercase tracking-wider">{t.clearAll}</span>
               </button>
             </div>
           </div>
@@ -1105,24 +1105,24 @@ Use Markdown formatting to arrange the report beautifully and elegantly.`
             </div>
           </div>
         ) : currentView === 'preferences' ? (
-          <div className="flex-1 overflow-y-auto p-4 md:p-8">
+          <div className="flex-1 overflow-y-auto p-6 md:p-12">
             <div className="max-w-5xl mx-auto w-full">
-              <h2 className="text-3xl font-bold mb-8 text-[#F97316] flex items-center gap-3">
-                <Settings className="w-8 h-8 text-[#F97316]" />
+              <h2 className="text-4xl font-bold mb-10 text-[#F97316] flex items-center gap-4">
+                <Settings className="w-10 h-10 text-[#F97316]" />
                 {t.preferences}
               </h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div className="bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-sm border border-gray-200 dark:border-gray-700">
-                  <h3 className="font-bold text-[#111827] dark:text-white mb-4 flex items-center gap-2">
-                    <Globe className="w-5 h-5 text-[#F97316]" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-sm border border-gray-200 dark:border-gray-700">
+                  <h3 className="text-xl font-bold text-[#111827] dark:text-white mb-6 flex items-center gap-3">
+                    <Globe className="w-6 h-6 text-[#F97316]" />
                     {t.languageSettings || 'Language Settings'}
                   </h3>
                   <div className="relative">
                     <select
                       value={lang}
                       onChange={(e) => setLang(e.target.value as LangKey)}
-                      className="w-full appearance-none bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-[#111827] dark:text-white rounded-2xl p-4 pr-10 outline-none focus:border-[#F97316] transition-all font-bold"
+                      className="w-full appearance-none bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-[#111827] dark:text-white rounded-2xl p-6 pr-12 outline-none focus:border-[#F97316] transition-all font-bold text-lg"
                     >
                       {Object.entries(languages).map(([key, config]) => (
                         <option key={key} value={key}>
@@ -1130,13 +1130,13 @@ Use Markdown formatting to arrange the report beautifully and elegantly.`
                         </option>
                       ))}
                     </select>
-                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+                    <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400 pointer-events-none" />
                   </div>
                 </div>
 
-                <div className="bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-sm border border-gray-200 dark:border-gray-700">
-                  <h3 className="font-bold text-[#111827] dark:text-white mb-4 flex items-center gap-2">
-                    <Calculator className="w-5 h-5 text-[#F97316]" />
+                <div className="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-sm border border-gray-200 dark:border-gray-700">
+                  <h3 className="text-xl font-bold text-[#111827] dark:text-white mb-6 flex items-center gap-3">
+                    <Calculator className="w-6 h-6 text-[#F97316]" />
                     {t.currencySettings || 'Currency Settings'}
                   </h3>
                   <div className="relative">
@@ -1146,7 +1146,7 @@ Use Markdown formatting to arrange the report beautifully and elegantly.`
                         setCurrency(e.target.value);
                         localStorage.setItem('taskpilot_currency', e.target.value);
                       }}
-                      className="w-full appearance-none bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-[#111827] dark:text-white rounded-2xl p-4 pr-10 outline-none focus:border-[#F97316] transition-all font-bold"
+                      className="w-full appearance-none bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-[#111827] dark:text-white rounded-2xl p-6 pr-12 outline-none focus:border-[#F97316] transition-all font-bold text-lg"
                     >
                       {['USD', 'EUR', 'GBP', 'SAR', 'AED', 'EGP', 'KWD', 'QAR', 'BHD', 'OMR', 'JOD', 'TRY'].map((c) => (
                         <option key={c} value={c}>
@@ -1154,46 +1154,46 @@ Use Markdown formatting to arrange the report beautifully and elegantly.`
                         </option>
                       ))}
                     </select>
-                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+                    <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400 pointer-events-none" />
                   </div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                <div className="space-y-8">
                   <CurrencyConverter t={t} baseCurrency={currency} langConfig={langConfig} />
                   <TravelTips t={t} langConfig={langConfig} />
                 </div>
               </div>
 
               <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
-                <div className="p-6">
-                  <h3 className="font-bold text-[#111827] dark:text-white mb-4 flex items-center gap-2">
-                    <Star className="w-5 h-5 text-[#F97316]" />
+                <div className="p-8">
+                  <h3 className="text-xl font-bold text-[#111827] dark:text-white mb-6 flex items-center gap-3">
+                    <Star className="w-6 h-6 text-[#F97316]" />
                     {t.aiExecutionPreferences || 'AI Execution Preferences'}
                   </h3>
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {preferences.map((pref, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800/50 rounded-2xl group border border-transparent hover:border-violet-100 dark:hover:border-violet-500/30 transition-all">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center">
-                            <Check className="w-4 h-4 text-[#8B5CF6]" />
+                      <div key={idx} className="flex items-center justify-between p-5 bg-gray-50 dark:bg-gray-800/50 rounded-2xl group border border-transparent hover:border-violet-100 dark:hover:border-violet-500/30 transition-all">
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center">
+                            <Check className="w-5 h-5 text-[#8B5CF6]" />
                           </div>
-                          <span className="font-bold text-[#111827]/80 dark:text-gray-200">{pref}</span>
+                          <span className="text-lg font-bold text-[#111827]/80 dark:text-gray-200">{pref}</span>
                         </div>
                         <button 
                           onClick={() => setPreferences(prev => prev.filter((_, i) => i !== idx))}
-                          className="p-2 text-gray-400 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all bg-white dark:bg-gray-700 rounded-lg shadow-sm"
+                          className="p-3 text-gray-400 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all bg-white dark:bg-gray-700 rounded-lg shadow-sm"
                         >
-                          <X className="w-4 h-4" />
+                          <X className="w-5 h-5" />
                         </button>
                       </div>
                     ))}
-                    <div className="flex gap-2 mt-4">
+                    <div className="flex gap-3 mt-6">
                       <input 
                         type="text"
                         placeholder={t.addPreferencePlaceholder || "Add new preference (e.g. Only 5-star hotels)..."}
-                        className="flex-1 p-4 rounded-2xl border border-gray-200 dark:border-gray-700 outline-none focus:border-[#F97316] bg-gray-50 dark:bg-gray-900 focus:bg-white dark:focus:bg-gray-800 text-[#111827] dark:text-white transition-all"
+                        className="flex-1 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 outline-none focus:border-[#F97316] bg-gray-50 dark:bg-gray-900 focus:bg-white dark:focus:bg-gray-800 text-[#111827] dark:text-white transition-all text-lg"
                         onKeyDown={(e) => {
                           if (e.key === 'Enter') {
                             const val = (e.target as HTMLInputElement).value;
@@ -1212,7 +1212,7 @@ Use Markdown formatting to arrange the report beautifully and elegantly.`
                             input.value = '';
                           }
                         }}
-                        className="bg-[#F97316] text-white px-6 rounded-2xl font-bold hover:bg-[#ea580c] transition-all"
+                        className="bg-[#F97316] text-white px-8 rounded-2xl font-bold hover:bg-[#ea580c] transition-all text-lg"
                       >
                         {t.add}
                       </button>

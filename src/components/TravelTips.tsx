@@ -29,19 +29,19 @@ export function TravelTips({ t, langConfig }: TravelTipsProps) {
   ];
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl border border-orange-100 dark:border-gray-700 shadow-sm overflow-hidden transition-all duration-200 hover:shadow-md">
+    <div className="bg-white dark:bg-gray-800 rounded-3xl border border-orange-100 dark:border-gray-700 shadow-sm overflow-hidden transition-all duration-200 hover:shadow-md">
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between p-4 bg-orange-50/50 dark:bg-gray-800 hover:bg-orange-50 dark:hover:bg-gray-700 transition-colors"
+        className="w-full flex items-center justify-between p-6 bg-orange-50/50 dark:bg-gray-800 hover:bg-orange-50 dark:hover:bg-gray-700 transition-colors"
       >
-        <div className="flex items-center gap-3">
-          <div className="bg-orange-100 dark:bg-gray-700 p-2 rounded-lg">
-            <Info className="w-5 h-5 text-[#F97316]" />
+        <div className="flex items-center gap-4">
+          <div className="bg-orange-100 dark:bg-gray-700 p-3 rounded-xl">
+            <Info className="w-7 h-7 text-[#F97316]" />
           </div>
-          <span className="font-bold text-[#111827] dark:text-white">{t.travelTips || 'First-Time Traveler Tips'}</span>
+          <span className="font-bold text-[#111827] dark:text-white text-xl">{t.travelTips || 'First-Time Traveler Tips'}</span>
         </div>
-        <div className="bg-white dark:bg-gray-700 p-1.5 rounded-full shadow-sm border border-orange-100 dark:border-gray-600">
-          {isOpen ? <ChevronUp className="w-4 h-4 text-[#F97316]" /> : <ChevronDown className="w-4 h-4 text-[#F97316]" />}
+        <div className="bg-white dark:bg-gray-700 p-2 rounded-full shadow-sm border border-orange-100 dark:border-gray-600">
+          {isOpen ? <ChevronUp className="w-6 h-6 text-[#F97316]" /> : <ChevronDown className="w-6 h-6 text-[#F97316]" />}
         </div>
       </button>
       
@@ -54,15 +54,15 @@ export function TravelTips({ t, langConfig }: TravelTipsProps) {
             exit={{ height: 0, opacity: 0 }}
             className="overflow-hidden"
           >
-            <div className="p-4 space-y-4 bg-white dark:bg-gray-800 border-t border-orange-50 dark:border-gray-700">
+            <div className="p-6 space-y-6 bg-white dark:bg-gray-800 border-t border-orange-50 dark:border-gray-700">
               {tips.map((tip, idx) => (
-                <div key={idx} className="flex gap-4 items-start group">
-                  <div className="bg-orange-50 dark:bg-gray-700 p-2.5 rounded-xl shrink-0 group-hover:bg-orange-100 dark:group-hover:bg-gray-600 transition-colors border border-orange-100/50 dark:border-gray-600">
-                    <tip.icon className="w-5 h-5 text-[#F97316]" />
+                <div key={idx} className="flex gap-6 items-start group">
+                  <div className="bg-orange-50 dark:bg-gray-700 p-4 rounded-2xl shrink-0 group-hover:bg-orange-100 dark:group-hover:bg-gray-600 transition-colors border border-orange-100/50 dark:border-gray-600">
+                    <tip.icon className="w-7 h-7 text-[#F97316]" />
                   </div>
                   <div className="pt-1">
-                    <h4 className="font-bold text-[15px] text-[#111827] dark:text-white mb-1">{tip.title}</h4>
-                    <p className="text-sm text-[#111827]/60 dark:text-gray-300 leading-relaxed">{tip.desc}</p>
+                    <h4 className="font-bold text-lg text-[#111827] dark:text-white mb-2">{tip.title}</h4>
+                    <p className="text-base text-[#111827]/60 dark:text-gray-300 leading-relaxed">{tip.desc}</p>
                   </div>
                 </div>
               ))}
