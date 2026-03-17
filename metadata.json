@@ -1,0 +1,7 @@
+{
+  "name": "TaskPilot AI - Smart Assistant",
+  "description": "A smart digital assistant for automated task execution, bookings, job applications, and data analysis with voice support and multi-language interface.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
